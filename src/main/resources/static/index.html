@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: steelblue;
+            color: white;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 1.6em;
+        }
+        .logout-btn {
+            background-color: crimson;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .logout-btn:hover {
+            background-color: darkred;
+        }
+        .main {
+            padding: 2em 0;
+            text-align: center;
+        }
+        .main a button {
+            padding: 1em 2.5em;
+            margin: 1.5em;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #ffe4c4;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .main a button:hover {
+            background-color: #f5d6a6;
+            transform: translateY(-2px);
+        }
+        .instructions {
+            margin-top: 3em;
+            padding: 1.5em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .instructions h2 {
+            margin-bottom: 0.5em;
+            color: steelblue;
+        }
+        .instructions ul {
+            padding-left: 1.2em;
+        }
+        .instructions ul li {
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Course Registration System</h1>
+    <form action="/logout" method="post">
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+</div>
+
+<div class="main">
+    <a href="Register.html"><button>Register a Course</button></a>
+    <a href="availableCourses.html"><button>Available Courses</button></a>
+
+    <a href="Enrolledstudent.html" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+        <button>Enrolled Students</button>
+    </a>
+</div>
+
+<div class="instructions">
+    <h2>📖 How to Use the System</h2>
+    <ul>
+        <li><strong>Register a Course:</strong> Click this button to fill out the form and enroll in a course.</li>
+        <li><strong>Available Courses:</strong> View the list of all available courses to choose from.</li>
+        <li><strong>Enrolled Students:</strong> (Admins only) See the list of students currently enrolled in different courses.</li>
+    </ul>
+</div>
+
+<style>
+    .instructions {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 600px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .instructions h2 {
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 22px;
+    }
+
+    .instructions ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .instructions li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        line-height: 1.5;
+    }
+
+    .instructions li:last-child {
+        border-bottom: none;
+    }
+
+    .instructions strong {
+        color: #4a90e2;
+    }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Courses</title>
+    <script type="text/javascript" src="myscript.js"></script>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+      }
+      th, td {
+          text-align: center;
+          padding: 10px;
+      }
+
+      thead {
+          background-color: lightblue;
+      }
+
+      table {
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+
+      table, th, td {
+          border: 1px solid black;
+      }
+
+      .back-btn {
+          display: inline-block;
+          background-color: black;
+          color: white;
+          padding: 0.5em 1em;
+          border-radius: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+      }
+
+      .back-btn:hover {
+          background-color: darkgray;
+          color: black;
+      }
+         h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <a href="/index.html" class="back-btn">Back</a>
+</div>
+<h2>Available Courses List</h2>
+
+<table style="margin-left: auto; margin-right: auto; border: 1px solid black;">
+    <thead>
+    <tr style="height: 50px;">
+        <th style="width: 100px;">Course Id</th>
+        <th style="width: 150px;">Course Name</th>
+        <th style="width: 150px;">Trainer Name</th>
+        <th style="width: 150px;">Duration in Weeks</th>
+    </tr>
+    </thead>
+    <tbody id="courseTable"></tbody>
+</table>
+
+
+<script type="text/javascript">
+    window.onload = function() {
+        showavailableCourses();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrolled</title>
+    <script type="text/javascript" src="enrolled.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: darkgray;
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 60%; /* same size as your screenshot */
+            font-size: 16px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a href="/index.html" class="back-btn">Back</a>
+</div>
+
+<h2>Enrolled Students List</h2>
+<h2 id="studentCount">Total Enrolled Students: 0</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Student Name</th>
+        <th>Email ID</th>
+        <th>Course Enrolled</th>
+    </tr>
+    </thead>
+    <tbody id="enrolledTable"></tbody>
+</table>
+
+<script type="text/javascript">
+    window.onload = function() {
+        showenrolledCourses();
+    }
+</script>
+</body>
+</html>

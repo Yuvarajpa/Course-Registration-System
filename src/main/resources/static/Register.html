@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+      }
+      form {
+          width: 40%;
+          background-color: beige;
+          padding: 5em;
+          border-radius: 20px;
+          margin: auto;
+      }
+      .one {
+          font-size: 1.2em;
+          color: black;
+          margin-top: 10px;
+      }
+      input, select {
+          width: 100%;
+          padding: 0.5em;
+          margin-top: 0.5em;
+          border-radius: 5px;
+          border: none;
+      }
+      .two {
+          background-color: black;
+          color: white;
+          text-align: center;
+          padding: 2em 0;
+          border-radius: 10px;
+      }
+      button {
+          background-color: black;
+          color: white;
+          padding: 0.7em;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+      }
+      button:hover {
+          background-color: darkgray;
+      }
+      .back-btn {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+  }
+  .back-btn:hover {
+      background-color: darkgray;
+      color: black;
+  }
+
+    </style>
+</head>
+<body>
+<div  class ="two">
+    <h1>Register course to explore more Excitement</h1>
+</div>
+<br>
+<div >
+    <a href="/index.html" class="back-btn">Back</a>
+</div>
+<form id="courseForm" action="http://localhost:8080/courses/register" method="post">
+    <div class="one">
+        <label for="name">Enter your Name:</label>
+        <input type="text" name="name" id="name" required>
+        <br><br>
+
+        <label for="emailId">Enter your mail ID:</label>
+        <input type="text" name="emailId" id="emailId" required>
+        <br><br>
+
+        <label for="course">Choose a Course:</label>
+        <select id="course" name="courseName" required>
+            <option value="">Select a course</option>
+            <option value="Java">Java</option>
+            <option value="Spring Boot">Spring Boot</option>
+            <option value="Python">Python</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<script>
+    document.getElementById("courseForm").addEventListener("submit", function(event) {
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("emailId").value.trim();
+        let course = document.getElementById("course").value;
+
+        if (name && email && course) {
+            alert("You have successfully registered for the course");
+        } else {
+            event.preventDefault(); // Stop form from submitting
+            alert("Please fill all the fields before submitting!");
+        }
+    });
+</script>
+</body>
+</html>
